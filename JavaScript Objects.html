@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Java Script Objects</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href='../mainstyle.css'>
+    <link rel="stylesheet" type="text/css" href='../flexnav.css'>
+    <script>
+        $(document).ready(function () {
+            //jQuery code goes here
+        })
+        
+        function profile() {
+            //Get the user input (personal data)
+            
+            var name = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value
+            };
+            
+            var place = {
+                street: document.getElementById("street").value,
+                city: document.getElementById("city").value,
+                state: document.getElementById("state").value,
+                zip: document.getElementById("zip").value
+            };
+            
+            var message = "Welcome " + name.fname + " " + name.lname + "! <br>" 
+            +  "Based on your input you live on " + place.street + ", " + place.city 
+            + ", " + place.state + " " + place.zip + "<br> Thanks for entering your"
+            + " full name and home address. All values were stored using Java Script objects! Goodbye. ";
+
+            //display the message with users personal data
+            document.getElementById("output").innerHTML= message;
+            
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        function topNavButton() {
+            document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+        }
+    </script>
+    <header id="webBanner">
+        <div class="center" id="wrapper">
+            <img id="navBackImg" src="blackheader.png" alt="navback" height="75" style="width: 100%;">
+            <h1 id="webHead">CIT 261 Main</h1>
+        </div>
+        <nav>
+
+            <div class="navigation">
+
+                <div><a href="index.html">Home</a></div>
+                <div class="dropdown">
+                    <button class="dropbtn">Topics Menu</button>
+                    <div class="dropdown-content">
+                      <a href="index.html">Home Page</a>
+                      <a href="JavaScript.html">Java Script</a>
+                      <a href="JavaScript%20Objects.html">Java Script Objects</a>
+                      <a href="JSON.html">JSON</a>  
+                      <a href="Ajax.html">Ajax</a>
+                      <a href="Local%20Storage.html">Local Storage</a>
+                      <a href="DOM.html">DOM</a>
+                      <a href="CSS%20Class%20Properties.html">CSS Class Properties</a> 
+                      <a href="JavaScript%20Events.html">Java Script Events</a>
+                      <a href="HTML5%20Tags.html">HTML5 Tags</a>
+                      <a href="CSS3%20Transitions.html">CSS3 Transitions</a>
+                      <a href="CSS3%20Transforms.html">CSS3 Transforms</a>
+                      <a href="CSS3%20Animations.html">CSS3 Animations</a>
+                    </div>
+                </div>   
+        </nav>
+    </header>
+    <main>
+        <h1 class="center"> Java Script Objects </h1>
+        <div class="center">
+            <img id="photomain" src="home.png" alt="home" height="250">
+        </div>
+        <ul class="center">
+            <li>Summary:I am using Java Script objects to store user input. After the user enters the information they click the button to create a message with the information entered.</li>
+        </ul>
+        <ul class="center">
+        Please enter your first name:
+    <input type="text" id="fname">
+    <br> Please enter your last name:
+    <input type="text" id="lname">
+    <br>
+    <br> Please enter your street address:
+    <input type="text" id="street">
+    <br>
+    <br> Please enter your city:
+    <input type="text" id="city">
+    <br>
+    <br> Please enter your state:
+    <input type="text" id="state">
+    <br>
+    <br> Please enter your zip code:
+    <input type="text" id="zip">
+    <br>
+    <button type="button" onclick="profile()">Create Message</button>
+    <div id="output"></div>
+        </ul>
+
+    </main>
+    <footer>
+        <small id="flexFooter"> Last Updated: Feb 21, 2019</small>
+    </footer>
+</body>
+
+</html>
