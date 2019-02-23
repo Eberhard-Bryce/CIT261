@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Template Title</title>
+    <title>AJAX</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href='mainstyle.css'>
@@ -12,6 +12,34 @@
         $(document).ready(function () {
             //jQuery code goes here
         })
+    </script>
+    
+    <script type="text/javascript">
+    function getWeather() {
+        document.getElementById("run").onclick = function weather() {
+            var input = document.forms["myForm"]["city"].value;
+            var Url = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&APPID=d7bddd43bfa6f4bf2544c7397e4c94fc&units=imperial";
+            var call = new XMLHttpRequest();
+            call.open("GET", Url, true);
+            call.send();
+            call.onreadystatechange = process;
+            function process() {
+                if (call.readyState == 4 && call.status == 200) {
+                    var request = JSON.parse(call.responseText);
+                    document.getElementById("city").innerHTML = request.name;
+                    document.getElementById("weather").innerHTML = request.weather.main;
+                    document.getElementById("temp").innerHTML = request.main.temp;
+                    document.getElementById("humidity").innerHTML = request.main.humidity;
+                    document.getElementById("windSpeed").innerHTML = request.wind.speed;
+                   
+                    
+                }
+            }
+    }
+    }
+   
+   
+            
     </script>
 </head>
 
@@ -24,7 +52,7 @@
     <header id="webBanner">
         <div class="center" id="wrapper">
             <img id="navBackImg" src="blackheader.png" alt="navback" height="75" style="width: 100%;">
-            <h1 id="webHead">CIT 261 Main</h1>
+            <h1 id="webHead">CIT 261</h1>
         </div>
         <nav>
 
@@ -52,11 +80,30 @@
         </nav>
     </header>
     <main>
-        <h1 class="center"> This is a Template </h1>
-        <img class="center" id="mainphoto" src="TempPhoto.png" alt="photo" height="175" width="175">
+        <h1 class="center"> Current Weather</h1>
         <ul class="center">
-            <li>Summary:This is a template for creating each page to pass of topics. Please edit this text and put the summary on how the page contains sufficent work to pass of the topic in question.</li>
+            <li>Summary:This page is using the open weather API to allow the user to search the current temperature, humidity, wind, and description. This is then displayed with AJAX. Please use the search bar below to search the weather report for any city. Spelling matters and if you misspell the city you will not get the results back.</li>
         </ul>
+        
+        <div class="center">
+        <h3 class="center">Enter City Name</h3>
+        </div>
+        
+        <div class="center">
+        <form name="myForm">
+        <input type="text" name="city" placeholder="City Name">
+        <button id="run" onclick="getWeather()">Search City</button>
+        </form>
+        </div>
+        
+        <div class="center">
+        City: <a id="name"></a><br>
+        Weather: <a id="weather"></a><br>
+        Temperature: <a id="temp"></a><br>
+        Humidity: <a id="humidity"></a><br>
+        Wind Speed: <a id="windSpeed"></a><br>
+        
+        </div>
 
     </main>
     <footer>
