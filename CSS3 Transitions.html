@@ -13,6 +13,64 @@
             //jQuery code goes here
         })
     </script>
+    <style>
+        #box1 {
+            width: 150px;
+            height: 75px;
+            background: black;
+            color: darkgreen;
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-transition: width 3s;
+            transition: width 3s;    
+        }
+        #box2 {
+            width: 150px;
+            height: 75px;
+            background: black;
+            color: darkgreen;
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-transition: width 3s;
+            transition: width 3s;    
+        }
+        #box3 {
+            width: 150px;
+            height: 75px;
+            background: black;
+            color: darkgreen;
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-transition: width 3s;
+            transition: width 3s;    
+        }
+        #box1{-webkit-transition-timing-function: ease;
+            transition-timing-function: ease;}
+        #box2{-webkit-transition-timing-function: ease;
+            transition-timing-function: ease;}
+        #box3{-webkit-transition-timing-function: ease;
+            transition-timing-function: ease;}
+        
+        #box1:hover {
+            width: 300px;
+            background-color:darkgreen;
+            color: black
+            }
+        #box2:hover {
+            width: 450px;
+            background-color:darkgreen;
+            color: black
+            }
+        #box3:hover {
+            width: 700px;
+            background-color:darkgreen;
+            color: black
+            }
+    
+    </style>
 </head>
 
 <body>
@@ -52,8 +110,10 @@
         </nav>
     </header>
     <main>
-        <h1 class="center"> This is a Template </h1>
-        <img class="center" id="mainphoto" src="TempPhoto.png" alt="photo" height="175" width="175">
+        <h1 class="center"> CSS3 Transitions </h1>
+        <div class="center" id="box1">Short</div>
+        <div class="center" id="box2">Medium</div>
+        <div class="center" id="box3">Long</div>
         <ul class="center">
             <li>Summary:This is a template for creating each page to pass of topics. Please edit this text and put the summary on how the page contains sufficent work to pass of the topic in question.</li>
         </ul>
