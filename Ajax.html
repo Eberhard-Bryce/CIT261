@@ -13,34 +13,28 @@
             //jQuery code goes here
         })
     </script>
-    
-    <script type="text/javascript">
+    <script type = "application/javascript">
     function getWeather() {
-        document.getElementById("run").onclick = function weather() {
-            var input = document.forms["myForm"]["city"].value;
-            var Url = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&APPID=d7bddd43bfa6f4bf2544c7397e4c94fc&units=imperial";
-            var call = new XMLHttpRequest();
-            call.open("GET", Url, true);
-            call.send();
-            call.onreadystatechange = process;
-            function process() {
-                if (call.readyState == 4 && call.status == 200) {
-                    var request = JSON.parse(call.responseText);
-                    document.getElementById("city").innerHTML = request.name;
-                    document.getElementById("weather").innerHTML = request.weather.main;
-                    document.getElementById("temp").innerHTML = request.main.temp;
-                    document.getElementById("humidity").innerHTML = request.main.humidity;
-                    document.getElementById("windSpeed").innerHTML = request.wind.speed;
-                   
-                    
-                }
-            }
+        
+        var input = document.getElementById("city").value;
+        var url = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&APPID=d7bddd43bfa6f4bf2544c7397e4c94fc&units=imperial";
+         var request = new XMLHttpRequest();
+      request.onreadystatechange = function(){
+          
+          if (request.readyState == 4) {
+              var data = JSON.parse(request.responseText);
+              document.getElementById("city").innerHTML = data.name;
+              document.getElementById("temp").innerHTML = data.main.temp;
+              document.getElementById("weather").innerHTML = data.weather[0].description;
+              document.getElementById("humidity").innerHTML = data.main.humidity;
+              document.getElementById("wind").innerHTML = data.wind.speed;
+          }
+      }
+      request.open("GET", url, true);
+        request.send();
     }
-    }
-   
-   
-            
     </script>
+    
 </head>
 
 <body>
@@ -82,7 +76,7 @@
     <main>
         <h1 class="center"> Current Weather</h1>
         <ul class="center">
-            <li>Summary:This page is using the open weather API to allow the user to search the current temperature, humidity, wind, and description. This is then displayed with AJAX. Please use the search bar below to search the weather report for any city. Spelling matters and if you misspell the city you will not get the results back.</li>
+            <li>Summary:This page is using the open weather API to allow the user to search the current temperature, description, humidity, and wind. This is then displayed with AJAX. Please use the search bar below to search the weather report for any city. Spelling matters and if you misspell the city you will not get the results back.</li>
         </ul>
         
         <div class="center">
@@ -90,21 +84,23 @@
         </div>
         
         <div class="center">
-        <form name="myForm">
-        <input type="text" name="city" placeholder="City Name">
+        <input type="text" id="city" placeholder="City Name">
         <button id="run" onclick="getWeather()">Search City</button>
-        </form>
         </div>
         
-        <div class="center">
-        City: <a id="name"></a><br>
-        Weather: <a id="weather"></a><br>
-        Temperature: <a id="temp"></a><br>
-        Humidity: <a id="humidity"></a><br>
-        Wind Speed: <a id="windSpeed"></a><br>
-        
+        <div id="center">
+        <table align="center">
+         <tr><th>City:</th><th id="city"></th></tr>
+         <tr><td><div>Temperature(F):</div></td>
+         <td><div id = "temp"></div></td></tr>
+         <tr><td><div>Weather:</div></td>
+         <td><div id = "weather"></div></td></tr>
+         <tr><td><div>Humidity(%):</div></td>
+         <td><div id = "humidity"></div></td></tr>
+         <tr><td><div>Wind(mph):</div></td>
+         <td><div id = "wind"></div></td></tr>
+      </table>
         </div>
-
     </main>
     <footer>
         <small id="flexFooter"> Last Updated: Feb 21, 2019</small>
