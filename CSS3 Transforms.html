@@ -6,13 +6,46 @@
     <title>Template Title</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href='mainstyle.css'>
-    <link rel="stylesheet" type="text/css" href='flexnav.css'>
+    <link rel="stylesheet" type="text/css" href='../mainstyle.css'>
+    <link rel="stylesheet" type="text/css" href='../flexnav.css'>
     <script>
         $(document).ready(function () {
             //jQuery code goes here
         })
     </script>
+    <style>
+    .transform {
+  height: 150px;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto;
+  animation: roll 6s infinite;
+  transform: rotate(30deg);
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+#image { 
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    </style>
 </head>
 
 <body>
@@ -52,10 +85,14 @@
         </nav>
     </header>
     <main>
-        <h1 class="center"> This is a Template </h1>
-        <img class="center" id="mainphoto" src="TempPhoto.png" alt="photo" height="175" width="175">
+        <h1 class="center"> CSS3 Transformation </h1>
+        <div class="center">
+        <div class="image">
+        <img class="transform" src="rotate.png" alt="photo" height="175" width="175">
+            </div>
+            </div>
         <ul class="center">
-            <li>Summary:This is a template for creating each page to pass of topics. Please edit this text and put the summary on how the page contains sufficent work to pass of the topic in question.</li>
+            <p>Summary:This page uses CSS3 transformations to take an image and rotate it 360 degrees an infinite times at 6s per interval.</p>
         </ul>
 
     </main>
