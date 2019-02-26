@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CSS3 Animation</title>
+    <title>Template Title</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href='mainstyle.css'>
@@ -13,60 +13,64 @@
             //jQuery code goes here
         })
     </script>
-    <script type="text/javascript" src="simpledrawing.js"></script>
-    <script type="text/javascript">
-        "use strict";
+    <style>
+     .animation {
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+  position: relative;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  
+  /* Standard syntax */
+  animation-name: example;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-delay: 2.5s;
+  animation-iteration-count: infinite;
+    
 
-        /* Input
-         * Process:
-         * Output:
-         */
-        function startAnim() {
-            setInterval(drawScene, 100);
-        }
-
-        var doodleLeft = 0,
-            doodleTop = 80;
-
-        function drawScene() {
-            var canvas = document.getElementById('picture');
-            var teal = makeColor3(0, 255, 255);
-            fillRect(canvas, 0, 0, 600, 400, teal);
-            doodleBob(doodleLeft, doodleTop);
-            doodleLeft += 5;
-        }
-
-        function doodleBob(left, top) {
-            var canvas = document.getElementById('picture');
-            var red = makeColor3(255, 0, 0);
-            var black = makeColor3(0, 0, 0);
-            var white = makeColor3(255, 255, 255);
-            var orange = makeColor3(255, 165, 0);
-            var gray = makeColor3(169, 169, 169);
-
-
-            //draw head and body
-            drawRect(canvas, left, top, 150, 200, black);
-            fillRect(canvas, left, top, 150, 200, white);
-
-            //draw eyes
-            fillCircle(canvas, left + 50, top + 50, 10, red);
-            fillCircle(canvas, left + 100, top + 40, 7, red);
-
-            //draw mouth and teeth
-            drawLine(canvas, left + 40, top + 100, left + 110, top + 100, black);
-            fillRect(canvas, left + 55, top + 100, 10, 15, gray);
-            fillRect(canvas, left + 85, top + 100, 10, 15, gray);
-
-            //draw body and tie
-            drawLine(canvas, left, top + 140, left + 150, top + 140, black);
-            fillTri(canvas, left + 75, top + 150, left + 60, top + 190, left + 90, top + 185, orange);
-
-            //draw legs
+  
+    
+}
+ {
+  height: 150px;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto;
+  animation: roll 6s infinite;
+  transform: rotate(30deg);
+}
 
 
-        }
-    </script>
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0%   {background-color:teal; left:0px; top:0px;}
+  25%  {background-color:turquoise; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:teal; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%   {background-color:teal; left:0px; top:0px;}
+  25%  {background-color:turquoise; left:1000px; top:0px;}
+  50%  {background-color:blue; left:1000px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:teal; left:0px; top:0px;}
+    0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+}
+    </style>
 </head>
 
 <body>
@@ -78,7 +82,7 @@
     <header id="webBanner">
         <div class="center" id="wrapper">
             <img id="navBackImg" src="blackheader.png" alt="navback" height="75" style="width: 100%;">
-            <h1 id="webHead">CIT 261 </h1>
+            <h1 id="webHead">CIT 261 Main</h1>
         </div>
         <nav>
 
@@ -107,15 +111,14 @@
         </nav>
     </header>
     <main>
-        <h1 class="center"> CSS3 Animation </h1>
+        <h1 class="center"> CSS3 Animations </h1>
         <div class="center">
-        <canvas id="picture" width="600" height="400" style="border:1px solid"></canvas>
-        <br>
-        <button type="button" onclick="startAnim()">Draw</button>
-        </div>
+        <div class="animation"></div>
         <ul class="center">
-            <li>Summary: This page is demonstrating CSS3 animations. By clicking the draw button Doodle Bob from Sponge Bob will travel across the canvas. To replay the animation please refresh the screen. </li>
+            <br><br><br><br><br><br><br><br><br><br>
+            <p>Summary:This is a template for creating each page to pass of topics. Please edit this text and put the summary on how the page contains sufficent work to pass of the topic in question.</p>
         </ul>
+            </div>
 
     </main>
     <footer>
