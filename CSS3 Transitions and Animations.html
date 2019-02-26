@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Template Title</title>
+    <title>CSS3 Tranisition and Animation</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href='mainstyle.css'>
@@ -12,6 +12,60 @@
         $(document).ready(function () {
             //jQuery code goes here
         })
+    </script>
+    <script type="text/javascript" src="simpledrawing.js"></script>
+    <script type="text/javascript">
+        "use strict";
+
+        /* Input
+         * Process:
+         * Output:
+         */
+        function startAnim() {
+            setInterval(drawScene, 100);
+        }
+
+        var doodleLeft = 0,
+            doodleTop = 80;
+
+        function drawScene() {
+            var canvas = document.getElementById('picture');
+            var teal = makeColor3(0, 255, 255);
+            fillRect(canvas, 0, 0, 600, 400, teal);
+            doodleBob(doodleLeft, doodleTop);
+            doodleLeft += 5;
+        }
+
+        function doodleBob(left, top) {
+            var canvas = document.getElementById('picture');
+            var red = makeColor3(255, 0, 0);
+            var black = makeColor3(0, 0, 0);
+            var white = makeColor3(255, 255, 255);
+            var orange = makeColor3(255, 165, 0);
+            var gray = makeColor3(169, 169, 169);
+
+
+            //draw head and body
+            drawRect(canvas, left, top, 150, 200, black);
+            fillRect(canvas, left, top, 150, 200, white);
+
+            //draw eyes
+            fillCircle(canvas, left + 50, top + 50, 10, red);
+            fillCircle(canvas, left + 100, top + 40, 7, red);
+
+            //draw mouth and teeth
+            drawLine(canvas, left + 40, top + 100, left + 110, top + 100, black);
+            fillRect(canvas, left + 55, top + 100, 10, 15, gray);
+            fillRect(canvas, left + 85, top + 100, 10, 15, gray);
+
+            //draw body and tie
+            drawLine(canvas, left, top + 140, left + 150, top + 140, black);
+            fillTri(canvas, left + 75, top + 150, left + 60, top + 190, left + 90, top + 185, orange);
+
+            //draw legs
+
+
+        }
     </script>
 </head>
 
@@ -24,7 +78,7 @@
     <header id="webBanner">
         <div class="center" id="wrapper">
             <img id="navBackImg" src="blackheader.png" alt="navback" height="75" style="width: 100%;">
-            <h1 id="webHead">CIT 261 Main</h1>
+            <h1 id="webHead">CIT 261 </h1>
         </div>
         <nav>
 
@@ -52,10 +106,14 @@
         </nav>
     </header>
     <main>
-        <h1 class="center"> This is a Template </h1>
-        <img class="center" id="mainphoto" src="TempPhoto.png" alt="photo" height="175" width="175">
+        <h1 class="center"> CSS3 Transition and Animation with Java Script </h1>
+        <div class="center">
+        <canvas id="picture" width="600" height="400" style="border:1px solid"></canvas>
+        <br>
+        <button type="button" onclick="startAnim()">Draw</button>
+        </div>
         <ul class="center">
-            <li>Summary:This is a template for creating each page to pass of topics. Please edit this text and put the summary on how the page contains sufficent work to pass of the topic in question.</li>
+            <li>Summary: This page is demonstrating CSS3 animations. By clicking the draw button Doodle Bob from Sponge Bob will travel across the canvas. To replay the animation please refresh the screen. </li>
         </ul>
 
     </main>
