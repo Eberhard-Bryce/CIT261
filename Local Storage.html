@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Template Title</title>
+    <title>Java Script</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href='mainstyle.css'>
@@ -13,6 +13,51 @@
             //jQuery code goes here
         })
     </script>
+    
+    <script type='text/javascript'>
+function load(){
+    localStorage.setItem("Number 1", "5");
+    localStorage.setItem("Number 2", "5");
+    localStorage.setItem("Number 3", "5");
+    localStorage.setItem("Number 4", "5");
+    localStorage.setItem("Number 5", "5");
+    }
+        
+function one(){
+localStorage.setItem("Number 1",document.getElementById("1").value);
+}
+    
+function two() {
+localStorage.setItem("Number 2",document.getElementById("2").value);  
+}
+ 
+function three() {
+localStorage.setItem("Number 3",document.getElementById("3").value);    
+}
+        
+function four() {
+localStorage.setItem("Number 4",document.getElementById("4").value);   
+}
+        
+function five() {
+localStorage.setItem("Number 5",document.getElementById("5").value);   
+}
+        
+function compute() {
+    var Num1 = parseFloat(localStorage.getItem("Number 1"));
+    var Num2 = parseFloat(localStorage.getItem("Number 2"));
+    var Num3 = parseFloat(localStorage.getItem("Number 3"));
+    var Num4 = parseFloat(localStorage.getItem("Number 4"));
+    var Num5 = parseFloat(localStorage.getItem("Number 5"));
+    
+    
+    
+    var sum = Num1 + Num2 + Num3 + Num4 + Num5;
+	document.getElementById("6").value = sum;
+
+}
+
+</script>
 </head>
 
 <body>
@@ -53,11 +98,28 @@
         </nav>
     </header>
     <main>
-        <h1 class="center"> This is a Template </h1>
-        <img class="center" id="mainphoto" src="TempPhoto.png" alt="photo" height="175" width="175">
+        <h1 class="center"> Local Storage </h1>
+        <div class="center">
+            <img id="photomain" src="addition.png" alt="loan" style='width:35%;'>
+        </div>
         <ul class="center">
-            <li>Summary:This is a template for creating each page to pass of topics. Please edit this text and put the summary on how the page contains sufficent work to pass of the topic in question.</li>
+            <p>Summary:This page is utilizing Java Script to calculate a loan. This will allow you to see how much you owe each payment and how much you have payed off.</li>
+        </p>
+        
+        <ul class="center">
+        <h1>Local Sotorage Addition Fun</h1>
+		<form>
+        Load Default Values(5): <button type="button" onClick="load()">Load</button><br>
+		Number 1: <input type="text" style="width: 50px" id="1" /> <button type="button" onClick="one()">Change</button><br />
+        Number 2: <input type="text" style="width: 50px" id="2" /> <button type="button" onClick="two()">Change</button><br />
+        Number 3: <input type="text" style="width: 50px" id="3" /> <button type="button" onClick="three()">Change</button><br />
+        Number 4: <input type="text" style="width: 50px" id="4" /> <button type="button" onClick="four()">Change</button><br />
+        Number 5: <input type="text" style="width: 50px" id="5" /> <button type="button" onClick="five()">Change</button><br />
+		Sum: <input type="text" id="6" style="width: 50px"></div> <button type="button" onClick="compute()">Add</button><br />
+            
+		</form>
         </ul>
+        
 
     </main>
     <footer>
