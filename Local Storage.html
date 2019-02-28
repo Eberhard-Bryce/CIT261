@@ -23,6 +23,7 @@ function load(){
     localStorage.setItem("Number 5", "5");
     }
         
+        
 function one(){
 localStorage.setItem("Number 1",document.getElementById("1").value);
 }
@@ -57,6 +58,13 @@ function compute() {
 
 }
 
+        function remove(){
+    localStorage.removeItem("Number 1");
+    localStorage.removeItem("Number 2");
+    localStorage.removeItem("Number 3");
+    localStorage.removeItem("Number 4");
+    localStorage.removeItem("Number 5");
+    }
 </script>
 </head>
 
@@ -100,10 +108,10 @@ function compute() {
     <main>
         <h1 class="center"> Local Storage </h1>
         <div class="center">
-            <img id="photomain" src="addition.png" alt="add" style='width:35%;'>
+            <img id="photomain" src="addition.png" alt="loan" style='width:35%;'>
         </div>
         <ul class="center">
-            <p>Summary:This page is utilizing Local Storage to store number values. You first need to load the default values. Then you can change any of the local values and the Sum function adds together all the current local values stored.</li>
+            <p>Summary:This page is utilizing Java Script to calculate a loan. This will allow you to see how much you owe each payment and how much you have payed off.</li>
         </p>
         
         <ul class="center">
@@ -116,6 +124,7 @@ function compute() {
         Number 4: <input type="text" style="width: 50px" id="4" /> <button type="button" onClick="four()">Change</button><br />
         Number 5: <input type="text" style="width: 50px" id="5" /> <button type="button" onClick="five()">Change</button><br />
 		Sum: <input type="text" id="6" style="width: 50px"></div> <button type="button" onClick="compute()">Add</button><br />
+        Reset: <button type="button" onClick="remove()">Reset</button><br>    
             
 		</form>
         </ul>
