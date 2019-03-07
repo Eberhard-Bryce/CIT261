@@ -6,12 +6,19 @@
     <title>Java Script Objects</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href='mainstyle.css'>
-    <link rel="stylesheet" type="text/css" href='flexnav.css'>
+    <link rel="stylesheet" type="text/css" href='/mainstyle.css'>
+    <link rel="stylesheet" type="text/css" href='/flexnav.css'>
     <script>
         $(document).ready(function () {
             //jQuery code goes here
         })
+        
+        function upperCase() {
+            var name1 = document.getElementById("fname");
+            name1.value = name1.value.toUpperCase();
+            var name2 = document.getElementById("lname");
+            name2.value = name2.value.toUpperCase();
+        }
         
         function profile() {
             //Get the user input (personal data)
@@ -37,6 +44,7 @@
             document.getElementById("output").innerHTML= message;
             
         }
+        
     </script>
 </head>
 
@@ -49,7 +57,7 @@
     <header id="webBanner">
         <div class="center" id="wrapper">
             <img id="navBackImg" src="blackheader.png" alt="navback" height="75" style="width: 100%;">
-            <h1 id="webHead">CIT 261 </h1>
+            <h1 id="webHead">CIT 261 Main</h1>
         </div>
         <nav>
 
@@ -61,18 +69,12 @@
                     <div class="dropdown-content">
                       <a href="index.html">Home Page</a>
                       <a href="JavaScript.html">Java Script</a>
-                      <a href="JavaScript%20Objects.html">Java Script Objects</a>
-                      <a href="JSON.html">JSON</a>  
+                      <a href="JavaScript%20Objects.html">Java Script Objects</a>  
                       <a href="Ajax.html">Ajax</a>
                       <a href="Local%20Storage.html">Local Storage</a>
-                      <a href="DOM.html">DOM</a>
-                      <a href="CSS%20Class%20Properties.html">CSS Class Properties</a> 
-                      <a href="JavaScript%20Events.html">Java Script Events</a>
+                      <a href="DOM.html">DOM</a> 
                       <a href="HTML5%20Tags.html">HTML5 Tags</a>
-                      <a href="CSS3%20Transitions.html">CSS3 Transitions</a>
-                      <a href="CSS3%20Transforms.html">CSS3 Transforms</a>
-                      <a href="CSS3%20Animations.html">CSS3 Animations</a>
-                        <a href="CSS3%20Transitions%20and%20Animations.html">CSS3 with JavaScript</a>
+                      <a href="CSS3%20Transitions%20and%20Animations.html">CSS3 with JavaScript</a>
                     </div>
                 </div>   
         </nav>
@@ -87,9 +89,9 @@
         </ul>
         <ul class="center">
         Please enter your first name:
-    <input type="text" id="fname">
+    <input type="text" id="fname" onchange="upperCase()" >
     <br> Please enter your last name:
-    <input type="text" id="lname">
+    <input type="text" id="lname" onchange="upperCase()">
     <br>
     <br> Please enter your street address:
     <input type="text" id="street">
