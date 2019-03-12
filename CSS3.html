@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Animations/Transitions/Transformation</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href='mainstyle.css'>
+    <link rel="stylesheet" type="text/css" href='flexnav.css'>
+    <script>
+        $(document).ready(function () {
+            //jQuery code goes here
+        })
+    </script>
+    <style>
+     .animation {
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+  position: relative;
+  /* Safari 4.0 - 8.0 */
+  -webkit-animation-name: example;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  
+  /* Standard syntax */
+  animation-name: example;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-delay: 2.5s;
+  animation-iteration-count: infinite;
+    
+
+  
+    
+}
+ {
+  height: 150px;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto;
+  animation: roll 6s infinite;
+  transform: rotate(30deg);
+}
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0%   {background-color:teal; left:0px; top:0px;}
+  25%  {background-color:turquoise; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:teal; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%   {background-color:teal; left:5%; top:0px;}
+  25%  {background-color:turquoise; left:90%; top:0px;}
+  50%  {background-color:blue; left:90%; top: 600px;}
+  75%  {background-color:green; left:5%; top:600px;}
+  100% {background-color:teal; left:5%; top:0px;}
+    0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+}
+    </style>
+    <style>
+    .transform {
+  height: 150px;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto;
+  animation: roll 6s infinite;
+  transform: rotate(30deg);
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+#image { 
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+    </style>
+    <style>
+        #box1 {
+            width: 150px;
+            height: 75px;
+            background: black;
+            color: darkgreen;
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-transition: width 3s;
+            transition: width 3s;    
+        }
+        #box2 {
+            width: 150px;
+            height: 75px;
+            background: black;
+            color: darkgreen;
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-transition: width 3s;
+            transition: width 3s;    
+        }
+        #box3 {
+            width: 150px;
+            height: 75px;
+            background: black;
+            color: darkgreen;
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-transition: width 3s;
+            transition: width 3s;    
+        }
+        #box1{-webkit-transition-timing-function: ease;
+            transition-timing-function: ease;}
+        #box2{-webkit-transition-timing-function: ease;
+            transition-timing-function: ease;}
+        #box3{-webkit-transition-timing-function: ease;
+            transition-timing-function: ease;}
+        
+        #box1:hover {
+            width: 300px;
+            background-color:darkgreen;
+            color: black
+            }
+        #box2:hover {
+            width: 450px;
+            background-color:darkgreen;
+            color: black
+            }
+        #box3:hover {
+            width: 700px;
+            background-color:darkgreen;
+            color: black
+            }
+    
+    </style>
+</head>
+
+<body>
+    <script>
+        function topNavButton() {
+            document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+        }
+    </script>
+    <header id="webBanner">
+        <div class="center" id="wrapper">
+            <img id="navBackImg" src="blackheader.png" alt="navback" height="75" style="width: 100%;">
+            <h1 id="webHead">CIT 261 Main</h1>
+        </div>
+        <nav>
+
+            <div class="navigation">
+
+                <div><a href="index.html">Home</a></div>
+                <div class="dropdown">
+                    <button class="dropbtn">Topics Menu</button>
+                    <div class="dropdown-content">
+                      <a href="index.html">Home Page</a>
+                      <a href="JavaScript.html">Java Script</a>
+                      <a href="JavaScript%20Objects.html">Java Script Objects</a>  
+                      <a href="Ajax.html">Ajax</a>
+                      <a href="Local%20Storage.html">Local Storage</a>
+                      <a href="CSS3.html">CSS3</a> 
+                      <a href="HTML5%20Tags.html">HTML5 Tags</a>
+                      <a href="CSS3%20Transitions%20and%20Animations.html">CSS3 with JavaScript</a>
+                    </div>
+                </div>   
+        </nav>
+    </header>
+    <main>
+        <h1 class="center"> CSS3 Animations/Transitions/Transformations</h1>
+        <div class="center">
+        <div class="animation"></div>
+        <div class="center" id="box1">Short</div>
+        <div class="center" id="box2">Medium</div>
+        <div class="center" id="box3">Long</div><br>
+        <div class="image">
+        <img class="transform" src="rotate.png" alt="photo" height="175" width="175">
+            </div>
+            </div>
+        <ul class="center">
+        <ul class="center">
+            <br><br><br><br><br><br><br><br><br><br>
+            <p>Summary:This pager contains CSS3 transitions, transformations, and animation.</p>
+        </ul>
+            </div>
+
+    </main>
+    <footer>
+        <small id="flexFooter"> Last Updated: Feb 21, 2019</small>
+    </footer>
+</body>
+
+</html>
