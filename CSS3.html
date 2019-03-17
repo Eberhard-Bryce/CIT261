@@ -1,18 +1,45 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <title>CSS Animations/Transitions/Transformation</title>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href='mainstyle.css'>
-    <link rel="stylesheet" type="text/css" href='flexnav.css'>
-    <script>
+<script>
         $(document).ready(function () {
             //jQuery code goes here
         })
+        
+        function Start() {
+         document.getElementById("square").style.WebkitAnimationPlayState = "running"; // Code for Chrome, Safari, and Opera
+        document.getElementById("square").style.animationPlayState = "running";
+        }
+        function Stop() {
+        document.getElementById("square").style.WebkitAnimationPlayState = "paused"; // Code for Chrome, Safari, and Opera
+  document.getElementById("square").style.animationPlayState = "paused"; 
+        }
+        
+        
     </script>
+    <script>
+    
+     function Slow() {
+        document.getElementById("box1").style.WebkitTransition = "all 3s"; 
+        document.getElementById("box1").style.transition = "all 3s";
+        document.getElementById("box2").style.WebkitTransition = "all 3s"; 
+        document.getElementById("box2").style.transition = "all 3s";
+        document.getElementById("box3").style.WebkitTransition = "all 3s"; 
+        document.getElementById("box3").style.transition = "all 3s";
+}
+        
+        function Speed() {
+        document.getElementById("box1").style.WebkitTransition = "all 0s"; 
+        document.getElementById("box1").style.transition = "all 0s";
+        document.getElementById("box2").style.WebkitTransition = "all 0s"; 
+        document.getElementById("box2").style.transition = "all 0s";
+        document.getElementById("box3").style.WebkitTransition = "all 0s"; 
+        document.getElementById("box3").style.transition = "all 0s";
+            
+        }
+     
+    </script>
+ 
     <style>
      .animation {
   width: 100px;
@@ -25,6 +52,7 @@
   -webkit-animation-timing-function: linear;
   -webkit-animation-delay: 2.5s;
   -webkit-animation-iteration-count: infinite;
+  -webkit-animation-play-state: paused;
   
   /* Standard syntax */
   animation-name: example;
@@ -32,7 +60,7 @@
   animation-timing-function: linear;
   animation-delay: 2.5s;
   animation-iteration-count: infinite;
-    
+  animation-play-state: paused; 
 
   
     
@@ -73,8 +101,8 @@
     </style>
     <style>
     .transform {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   margin-right: auto;
   margin-left: auto;
   animation: roll 6s infinite;
@@ -92,7 +120,8 @@
 
 
 #image { 
-    height: 100%;
+    height: 200px;
+    width:200px
     margin-left: auto;
     margin-right: auto;
 }
@@ -113,8 +142,7 @@
             margin: 20px;
             margin-left: auto;
             margin-right: auto;
-            -webkit-transition: width 3s;
-            transition: width 3s;    
+              
         }
         #box2 {
             width: 150px;
@@ -124,8 +152,7 @@
             margin: 20px;
             margin-left: auto;
             margin-right: auto;
-            -webkit-transition: width 3s;
-            transition: width 3s;    
+                
         }
         #box3 {
             width: 150px;
@@ -135,8 +162,7 @@
             margin: 20px;
             margin-left: auto;
             margin-right: auto;
-            -webkit-transition: width 3s;
-            transition: width 3s;    
+                
         }
         #box1{-webkit-transition-timing-function: ease;
             transition-timing-function: ease;}
@@ -163,6 +189,7 @@
     
     </style>
 </head>
+
 
 <body>
     <script>
@@ -195,23 +222,33 @@
                 </div>   
         </nav>
     </header>
-    <main>
+   <main>
         <h1 class="center"> CSS3 Animations/Transitions/Transformations</h1>
         <div class="center">
-        <div class="animation"></div>
+        <div class="animation" id="square"></div>
         <div class="center" id="box1">Short</div>
         <div class="center" id="box2">Medium</div>
         <div class="center" id="box3">Long</div><br>
-        <div class="image">
-        <img class="transform" src="rotate.png" alt="photo" height="175" width="175">
+        <div class="image" id="img">
+        <img class="transform" src="rotate.png" alt="photo">
             </div>
             </div>
         <ul class="center">
         <ul class="center">
             <br><br><br><br><br><br><br><br><br><br>
-            <p>Summary:This is a template for creating each page to pass of topics. Please edit this text and put the summary on how the page contains sufficent work to pass of the topic in question.</p>
+            <p>Summary:This page has javascript manipulate the CSS3 animations on the page. Please use the buttons below to change the respective CSS3 element.</p>
         </ul>
             </div>
+        <div class="center">
+        Start the square animation!<button type="button" onclick="Start()">Start</button>
+        Stop the square animation!<button type="button" onclick="Stop()">Stop</button>
+        </div>
+        
+        <div class="center">
+        Slow down the transition on the bars!<button type="button" onclick="Slow()">Slow</button>
+        Speed up the transition on the bars!<button type="button" onclick="Speed()">Speed</button>
+        </div>
+        
 
     </main>
     <footer>
