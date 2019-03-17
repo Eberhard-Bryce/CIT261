@@ -89,7 +89,8 @@
         
         <div class="center">
         <input type="text" style="width: 150px" id="g">
-        <input type="button" id="addMember" value="Add Family Member">
+        <input type="button" id="addMember" value="Add Family Member"><br>
+        <input type="button" id="removeMember" value="Delete Family Member">
             <ul id="familyMembers">
 
             </ul>
@@ -107,7 +108,11 @@
   addItem.appendChild(addName);     
   document.getElementById('familyMembers').appendChild(addItem);
 };
-            
+         
+    document.getElementById('removeMember').onclick = function(){
+        var list = document.getElementById('familyMembers');
+        list.removeChild(list.lastElementChild);
+    }
         </script>
     </main>
     <footer>
