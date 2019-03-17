@@ -69,7 +69,7 @@
             <img id="photomain" src="home.png" alt="home" height="250">
         </div>
         <ul class="center">
-            <li>Summary:I am using Java Script objects to store user input. After the user enters the information they click the button to create a message with the information entered.</li>
+            <li>Summary:I am using Java Script objects to store user input. After the user enters the information they click the button to create a message with the information entered. You can also use my Family Member List to add family members using DOM manipulation.</li>
         </ul>
         <ul class="center">
         Father's first name <input type="text" style="width: 100px" id="a" /><br />
@@ -84,6 +84,31 @@
         <div class="center" id="output"></div>
         
         </ul>
+        
+        <div class="center">Family Member List</div> 
+        
+        <div class="center">
+        <input type="text" style="width: 150px" id="g">
+        <input type="button" id="addMember" value="Add Family Member">
+            <ul id="familyMembers">
+
+            </ul>
+        
+        
+        </div>
+        
+        
+        <script>
+    document.getElementById('addMember').onclick = function(){
+  
+        var name = document.getElementById('g').value;     
+        var addItem = document.createElement("li");    
+        var addName = document.createTextNode(name);    
+  addItem.appendChild(addName);     
+  document.getElementById('familyMembers').appendChild(addItem);
+};
+            
+        </script>
     </main>
     <footer>
         <small id="flexFooter"> Last Updated: Feb 21, 2019</small>
