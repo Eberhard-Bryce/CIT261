@@ -13,38 +13,22 @@
             //jQuery code goes here
         })
         
-        function upperCase() {
-            var name1 = document.getElementById("fname");
-            name1.value = name1.value.toUpperCase();
-            var name2 = document.getElementById("lname");
-            name2.value = name2.value.toUpperCase();
-        }
+        function Member(first, last, age, title) {
+            this.first = first;
+            this.last = last;
+            this.age = age; }
+            
+            function profile(){
+                
+            var Father = new Member(document.getElementById("a").value,document.getElementById("b").value, document.getElementById("c").value);
+            
+            var Mother = new Member(document.getElementById("d").value,document.getElementById("e").value, document.getElementById("f").value);
         
-        function profile() {
-            //Get the user input (personal data)
-            
-            var name = {
-                fname: document.getElementById("fname").value,
-                lname: document.getElementById("lname").value
-            };
-            
-            var place = {
-                street: document.getElementById("street").value,
-                city: document.getElementById("city").value,
-                state: document.getElementById("state").value,
-                zip: document.getElementById("zip").value
-            };
-            
-            var message = "Welcome " + name.fname + " " + name.lname + "! <br>" 
-            +  "Based on your input you live on " + place.street + ", " + place.city 
-            + ", " + place.state + " " + place.zip + "<br> Thanks for entering your"
-            + " full name and home address. All values were stored using Java Script objects! Goodbye. ";
-
-            //display the message with users personal data
-            document.getElementById("output").innerHTML= message;
-            
-        }
         
+            var message = "Your father's name is " + Father.first + " " + Father.last + ". He  is currently " + Father.age + " years old. Your mother's name is " + Mother.first + " " + Mother.last + ". She is currently " + Mother.age + " years old.";
+        
+                document.getElementById("output").innerHTML= message;
+            }
     </script>
 </head>
 
@@ -67,13 +51,12 @@
                 <div class="dropdown">
                     <button class="dropbtn">Topics Menu</button>
                     <div class="dropdown-content">
-                    <a href="index.html">Home Page</a>
                       <a href="index.html">Home Page</a>
                       <a href="JavaScript.html">Java Script</a>
                       <a href="JavaScript%20Objects.html">Java Script Objects</a>  
                       <a href="Ajax.html">Ajax</a>
                       <a href="Local%20Storage.html">Local Storage</a>
-                      <a href="CSS3.html">CSS3</a> 
+                      <a href="DOM.html">DOM</a> 
                       <a href="HTML5%20Tags.html">HTML5 Tags</a>
                       <a href="CSS3%20Transitions%20and%20Animations.html">CSS3 with JavaScript</a>
                     </div>
@@ -89,27 +72,18 @@
             <li>Summary:I am using Java Script objects to store user input. After the user enters the information they click the button to create a message with the information entered.</li>
         </ul>
         <ul class="center">
-        Please enter your first name:
-    <input type="text" id="fname" onchange="upperCase()" >
-    <br> Please enter your last name:
-    <input type="text" id="lname" onchange="upperCase()">
-    <br>
-    <br> Please enter your street address:
-    <input type="text" id="street">
-    <br>
-    <br> Please enter your city:
-    <input type="text" id="city">
-    <br>
-    <br> Please enter your state:
-    <input type="text" id="state">
-    <br>
-    <br> Please enter your zip code:
-    <input type="text" id="zip">
-    <br>
-    <button type="button" onclick="profile()">Create Message</button>
-    <div id="output"></div>
+        Father's first name <input type="text" style="width: 100px" id="a" /><br />
+        Father's last name <input type="text" style="width: 100px" id="b" /><br />
+        Father's Age <input type="text" style="width: 100px" id="c" /><br />
+        Mothers's first name <input type="text" style="width: 100px" id="d" /><br />
+        Mothers's last name <input type="text" style="width: 100px" id="e" /><br />
+        Mothers's Age <input type="text" style="width: 100px" id="f" /><br />
+        
+        <button type="button" onclick="profile()">Create Message</button>
+        
+        <div class="center" id="output"></div>
+        
         </ul>
-
     </main>
     <footer>
         <small id="flexFooter"> Last Updated: Feb 21, 2019</small>
