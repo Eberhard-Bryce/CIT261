@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AJAX</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href='mainstyle.css'>
+    <link rel="stylesheet" type="text/css" href='flexnav.css'>
+    <script src="weather.js"></script>
+    
+</head>
+
+<body>
+    <script>
+        function topNavButton() {
+            document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+        }
+    </script>
+    <header id="webBanner">
+        <div class="center" id="wrapper">
+            <img id="navBackImg" src="blackheader.png" alt="navback" height="75" style="width: 100%;">
+            <h1 id="webHead">CIT 261</h1>
+        </div>
+        <nav>
+
+            <div class="navigation">
+
+                <div><a href="index.html">Home</a></div>
+                <div class="dropdown">
+                    <button class="dropbtn">Topics Menu</button>
+                    <div class="dropdown-content">
+                       <a href="index.html">Home Page</a>
+                      <a href="JavaScript.html">Java Script</a>
+                      <a href="JavaScript%20Objects.html">Java Script Objects</a>  
+                      <a href="Ajax.html">Ajax</a>
+                      <a href="Local%20Storage.html">Local Storage</a>
+                      <a href="DOM.html">DOM</a> 
+                      <a href="HTML5%20Tags.html">HTML5 Tags</a>
+                      <a href="CSS3%20Transitions%20and%20Animations.html">CSS3 with JavaScript</a>
+                    </div>
+                </div>   
+        </nav>
+    </header>
+    <main>
+        <h1 class="center">Weather App</h1>
+        
+        <div class="center">
+        <h3 class="center">Enter City Name</h3>
+        </div>
+        
+        <div class="center">
+        <input type="text" id="city" placeholder="City Name">
+        <button id="run" onclick="getWeather()">Search City</button>
+        </div>
+        
+        <div id="center">
+        <table align="center">
+         <tr><th>City:</th><th id="city"></th></tr>
+         <tr><td><div>Temperature(F):</div></td>
+         <td><div id = "temp"></div></td></tr>
+         <tr><td><div>Weather:</div></td>
+         <td><div id = "weather"></div></td></tr>
+         <tr><td><div>Humidity(%):</div></td>
+         <td><div id = "humidity"></div></td></tr>
+         <tr><td><div>Wind(mph):</div></td>
+         <td><div id = "wind"></div></td></tr>
+         <tr><td><div>Visual:</div></td>
+         <td><div id = "main"></div></td></tr>
+      </table>
+        </div>
+    <div class="center" id="hide1" style="display: none">
+    <img src=""  id="picture">    
+        </div>
+    <div class="center" id="hide2" style="display: none">
+        <button onclick="changeImage()">Click Here</button>
+        </div>
+    <div class="center" id="hide3" style="display: none">
+        <audio controls  autoplay id="sound">
+       <source src="" type="audio/wav">
+        </audio>
+        </div>
+    <div class="center" id="hide4" style="display: none">
+       <iframe width="560" height="315" src="https://www.youtube.com/watch?v=fdErsR8_NaU" frameborder="0" allowfullscreen></iframe>
+            </div>
+    
+    </main>
+    <footer>
+        <small id="flexFooter"> Last Updated: Feb 21, 2019</small>
+    </footer>
+</body>
+
+</html>
